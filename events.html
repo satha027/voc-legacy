@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Dr. JS Rajkumar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+        }
+        .book-shadow {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .infinity-pattern {
+            background: linear-gradient(45deg, #ff4444 0%, #cc3333 100%);
+        }
+        .mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.hidden {
+            transform: translateX(100%);
+        }
+        
+        .event-card {
+            transform: translateY(0);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            height: 400px; /* Fixed height for all cards */
+        }
+        
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .event-image {
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            overflow: hidden;
+            height: 200px; /* Fixed height for all images */
+        }
+        
+        .event-image img {
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .event-card:hover .event-image img {
+            transform: scale(1.08);
+        }
+        
+        .event-content {
+            height: 200px; /* Fixed height for content area */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.5rem;
+        }
+        
+        .register-btn {
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .register-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s, height 0.4s;
+        }
+        
+        .register-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .register-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(139, 69, 19, 0.3);
+        }
+        
+        .title-animation {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        
+        .card-animation {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        
+        .card-animation:nth-child(1) { animation-delay: 0.2s; }
+        .card-animation:nth-child(2) { animation-delay: 0.4s; }
+        .card-animation:nth-child(3) { animation-delay: 0.6s; }
+        
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .social-icon {
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-2px) scale(1.1);
+        }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .event-card {
+                height: auto;
+            }
+            .event-content {
+                height: auto;
+            }
+            .event-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <h1 class="text-2xl font-serif text-black">Dr. JS Rajkumar</h1>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8 text-gray-700">
+                    <a href="index.html" class="hover:text-black transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-black transition-colors">About</a>
+                    <a href="books.html" class="hover:text-black transition-colors">Books</a>
+                    <a href="review.html" class="hover:text-black transition-colors">Reviews</a>
+                    <a href="events.html" class="hover:text-black transition-colors font-semibold text-black">Events</a>
+                    <a href="contact.html" class="hover:text-black transition-colors">Contact</a>
+                </div>
+                
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-button" class="md:hidden flex flex-col justify-center items-center w-8 h-8 focus:outline-none">
+                    <span class="hamburger-line block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-gray-700 mt-1 transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-gray-700 mt-1 transition-all duration-300"></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 bg-white shadow-lg z-50 transform translate-x-full md:hidden">
+            <div class="flex justify-between items-center p-6 border-b border-gray-200">
+                <h2 class="text-xl font-serif text-black">Menu</h2>
+                <button id="mobile-menu-close" class="text-gray-500 hover:text-black">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="p-6">
+                <div class="space-y-6">
+                    <a href="index.html" class="block text-lg text-gray-700 hover:text-black transition-colors py-2">Home</a>
+                    <a href="about.html" class="block text-lg text-gray-700 hover:text-black transition-colors py-2">About</a>
+                    <a href="books.html" class="block text-lg text-gray-700 hover:text-black transition-colors py-2">Books</a>
+                    <a href="review.html" class="block text-lg text-gray-700 hover:text-black transition-colors py-2">Reviews</a>
+                    <a href="events.html" class="block text-lg text-black font-semibold transition-colors py-2">Events</a>
+                    <a href="contact.html" class="block text-lg text-gray-700 hover:text-black transition-colors py-2">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </nav>
+
+    <!-- Social Media Sidebar -->
+   <div class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 hidden lg:flex flex-col space-y-4">
+    <a href="https://x.com/drjsrajkumar_" class="social-icon w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-600 hover:text-white">
+        <!-- New X.com logo SVG -->
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 1200 1227" xmlns="http://www.w3.org/2000/svg">
+            <path d="M682.022 529.315 1178.51 0h-107.32L623.938 453.455 265.098 0H0l520.53 690.472L0 1227h107.32l470.546-481.105L934.902 1227H1200L682.022 529.315Zm-132.91 136.012-54.486-72.246L146.366 80.62h82.644l348.464 462.126 54.486 72.246L1053.63 1146.38h-82.644L549.112 665.327Z"/>
+        </svg>
+    </a>
+    </a>
+        <a href="https://www.instagram.com/drjsrajkumar?utm_source=ig_web_button_share_sheet&igsh=MTVqaTJuZzllbmwwaw==" class="social-icon w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-pink-600 hover:text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+        </a>
+        <a href="https://in.linkedin.com/in/drjsrajkumar" class="social-icon w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-800 hover:text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Title Section -->
+            <div class="text-center mb-16">
+                <div class="title-animation">
+                    <div class="w-16 h-0.5 bg-gray-800 mx-auto mb-8"></div>
+                    <h1 class="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-wider">
+                        E v e n t s
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Events Grid -->
+            <div class="gridi grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto max-w-fit">
+
+                <!-- Event 3: Reading & Signing -->
+                <div class="card-animation">
+                    <div class="event-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                        <div class="event-image">
+                            <img src="img/Book-Launch-Imp.jpeg" 
+                                 alt="Reading & Signing Event">
+                        </div>
+                        <div class="event-content">
+                            <div>
+                                <h2 class="font-playfair text-xl font-bold text-gray-900 mb-2">
+                                    Book Launch
+                                </h2>
+                                <div class="text-gray-600 mb-3 text-sm">
+                                    <span class="font-medium">--date--</span>
+                                    <span class="mx-2">|</span>
+                                    <span>--location--</span>
+                                </div>
+                                <p class="text-gray-500 text-sm mb-4 leading-relaxed line-clamp-3">
+                                    Experience an evening of literary exploration with readings from "book-title".
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg mb-4">For media inquiries,<br class="hidden sm:block">please contact agent Donna Clark</h4>
+                    <p class="text-sm text-gray-400">123-456-7890 | info@mysite.com</p>
+                    <p class="text-sm text-gray-400">500 Terry Francois Street, San Francisco</p>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg mb-4">Sign up for news and updates<br class="hidden sm:block">from Dr. JS Rajkumar</h4>
+                    <p class="text-sm text-gray-400 mb-4">Enter your email here*</p>
+                    <div class="flex flex-col sm:flex-row">
+                        <input type="email" placeholder="Enter your email" class="bg-gray-800 text-white p-2 flex-1 rounded sm:rounded-l sm:rounded-r-none mb-2 sm:mb-0">
+                        <button class="bg-gray-600 text-white px-4 py-2 rounded sm:rounded-r sm:rounded-l-none hover:bg-gray-500 transition-colors">Subscribe</button>
+                    </div>
+                    <div class="mt-4">
+                        <label class="flex items-center text-sm text-gray-400">
+                            <input type="checkbox" class="mr-2">
+                            Yes, subscribe me to your newsletter.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Store Info -->
+                <div>
+                    <h4 class="text-lg mb-4">Find more information about<br class="hidden sm:block">our online store & policies below</h4>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p class="hover:text-white cursor-pointer transition-colors">Shipping & Returns</p>
+                        <p class="hover:text-white cursor-pointer transition-colors">Store Policy</p>
+                        <p class="hover:text-white cursor-pointer transition-colors">Payment Methods</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>Designed by Ahopez Innovations.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenuOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            // Animate hamburger to X
+            hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            hamburgerLines[1].style.opacity = '0';
+            hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenuOverlay.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            
+            // Reset hamburger animation
+            hamburgerLines[0].style.transform = 'none';
+            hamburgerLines[1].style.opacity = '1';
+            hamburgerLines[2].style.transform = 'none';
+        }
+
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close menu when clicking on menu links
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+                closeMobileMenu();
+            }
+        });
+
+        // Add smooth scrolling for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all card elements
+        document.querySelectorAll('.card-animation').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add ripple effect to buttons
+        document.querySelectorAll('.register-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add CSS for ripple effect
+        const style = document.createElement('style');
+        style.textContent = `
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
+                transform: scale(0);
+                animation: ripple 0.6s linear;
+                pointer-events: none;
+            }
+            
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+            
+            .line-clamp-3 {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

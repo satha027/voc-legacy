@@ -1,0 +1,983 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>V.O. Chidambaram Pillai - The Tamil Helmsman | Official Tribute</title>
+    <meta name="description" content="A comprehensive tribute to V.O. Chidambaram Pillai, the legendary freedom fighter and entrepreneur who challenged British maritime monopoly.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#fefce8',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                            950: '#451a03',
+                        },
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        },
+                        orange: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+                        'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                        'strong': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 2px 10px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation styles */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #d97706;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.hidden {
+            transform: translateX(100%);
+        }
+
+        /* Hamburger animation */
+        .hamburger-line {
+            transition: all 0.3s ease;
+        }
+
+        /* Scroll effects */
+        .navbar-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(217, 119, 6, 0.2);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Timeline styles */
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f9fafb;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d97706;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b45309;
+        }
+
+        /* Hover effects */
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Form styles */
+        input:focus,
+        select:focus,
+        textarea:focus {
+            box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .timeline-item .absolute {
+                display: none;
+            }
+
+            .timeline-item .bg-white {
+                margin-left: 0 !important;
+            }
+        }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <h1 class="text-2xl font-serif text-black">VOC Legacy</h1>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8 text-gray-700">
+                    <a href="index.html" class="hover:text-black transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-black transition-colors">About</a>
+                    <a href="books.html" class="hover:text-black transition-colors">Books</a>
+                    <a href="review.html" class="hover:text-black transition-colors">Reviews</a>
+                    <a href="events.html" class="hover:text-black transition-colors">Events</a>
+                    <a href="contact.html" class="hover:text-black transition-colors">Contact</a>
+                </div>
+                
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-button" class="md:hidden flex flex-col justify-center items-center w-8 h-8 focus:outline-none">
+                    <span class="hamburger-line block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-gray-700 mt-1 transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-gray-700 mt-1 transition-all duration-300"></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 bg-white shadow-lg z-50 transform translate-x-full md:hidden">
+            <div class="flex justify-between items-center p-6 border-b border-gray-200">
+                <h2 class="text-xl font-serif text-black">Menu</h2>
+                <button id="mobile-menu-close" class="text-gray-500 hover:text-black">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="p-6">
+                <div class="space-y-6">
+                    <a href="index.html" class="block text-lg text-gray-700 hover:text-black transition-colors py-2">Home</a>
+                    <a href="about.html" class="block text-lg text-gray-700 hover:text-black transition-colors py-2">About</a>
+                    <a href="books.html" class="block text-lg text-gray-700 hover:text-black transition-colors py-2">Books</a>
+                    <a href="review.html" class="block text-lg text-gray-700 hover:text-black transition-colors py-2">Reviews</a>
+                    <a href="events.html" class="block text-lg text-gray-700 hover:text-black transition-colors py-2">Events</a>
+                    <a href="contact.html" class="block text-lg text-gray-700 hover:text-black transition-colors py-2">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50"></div>
+        <div class="relative z-10 text-center max-w-6xl mx-auto px-6">
+            <div class="animate-fade-in">
+                <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-amber-700 to-orange-700 bg-clip-text text-transparent">
+                    V.O. Chidambaram Pillai
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-4 font-light">
+                    "Kappalottiya Tamizhan" - The Tamil Helmsman
+                </p>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
+                <p class="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto mb-12 leading-relaxed">
+                    🌐 Introducing the First-Ever Dedicated Website Honoring India's Greatest Maritime Pioneer,
+                    Freedom Fighter, and Visionary Entrepreneur Who Challenged British Colonial Monopoly
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#biography" class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Explore His Legacy
+                    </a>
+                    <a href="#book" class="border-2 border-amber-600 text-amber-700 hover:bg-amber-600 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg">
+                        Featured Book
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section id="biography" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-amber-700">
+                    🌍 A Global Tribute to a National Hero
+                </h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    V. O. Chidambaram Pillai spearheaded India's Swadeshi movement through revolutionary economic independence,
+                    founding the first Indian-owned shipping company to challenge British monopoly.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg border border-gray-200 hover:border-amber-300 transition-all duration-300 hover:shadow-xl">
+                        <h3 class="font-serif text-2xl font-semibold mb-4 text-amber-700">Early Life & Legal Career</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Born into a family of modest means, VOC's brilliance shone early. He became a distinguished lawyer,
+                            using his legal acumen not just for personal success, but as a weapon against colonial injustice.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg border border-gray-200 hover:border-amber-300 transition-all duration-300 hover:shadow-xl">
+                        <h3 class="font-serif text-2xl font-semibold mb-4 text-amber-700">The Swadeshi Pioneer</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            His entrepreneurial vision led to the establishment of the Swadeshi Steam Navigation Company,
+                            a bold challenge to British maritime dominance that inspired a generation of freedom fighters.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-xl shadow-lg border border-amber-200">
+                        <h3 class="font-serif text-2xl font-semibold mb-6 text-amber-700">The Website Features</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
+                                Comprehensive biography with rare archival materials
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
+                                Interactive timeline of historical milestones
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
+                                Educational resources for global audiences
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
+                                Contemporary relevance of VOC's ideas
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
+                                Rare photographs and historical documents
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-amber-700">
+                    Interactive Timeline of Milestones
+                </h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+                    Journey through the pivotal moments that shaped a revolutionary leader and visionary entrepreneur.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-amber-600"></div>
+
+                    <div class="timeline-item mb-12">
+                        <div class="flex items-center justify-center">
+                            <div class="bg-white p-8 rounded-xl shadow-lg border border-amber-200 max-w-lg relative">
+                                <div class="absolute -left-4 top-8 w-8 h-8 bg-amber-600 rounded-full border-4 border-gray-50"></div>
+                                <span class="text-amber-700 font-semibold text-sm uppercase tracking-wide">1872</span>
+                                <h3 class="font-serif text-xl font-semibold mt-2 mb-3 text-gray-900">Birth & Early Years</h3>
+                                <p class="text-gray-700">Born in Ottapidaram, Thoothukudi district, Tamil Nadu</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item mb-12">
+                        <div class="flex items-center justify-center">
+                            <div class="bg-white p-8 rounded-xl shadow-lg border border-amber-200 max-w-lg relative ml-auto">
+                                <div class="absolute -right-4 top-8 w-8 h-8 bg-amber-600 rounded-full border-4 border-gray-50"></div>
+                                <span class="text-amber-700 font-semibold text-sm uppercase tracking-wide">1895</span>
+                                <h3 class="font-serif text-xl font-semibold mt-2 mb-3 text-gray-900">Legal Career Begins</h3>
+                                <p class="text-gray-700">Started practicing law, becoming a prominent advocate</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item mb-12">
+                        <div class="flex items-center justify-center">
+                            <div class="bg-white p-8 rounded-xl shadow-lg border border-amber-200 max-w-lg relative">
+                                <div class="absolute -left-4 top-8 w-8 h-8 bg-amber-600 rounded-full border-4 border-gray-50"></div>
+                                <span class="text-amber-700 font-semibold text-sm uppercase tracking-wide">1906</span>
+                                <h3 class="font-serif text-xl font-semibold mt-2 mb-3 text-gray-900">Swadeshi Steam Navigation Company</h3>
+                                <p class="text-gray-700">Founded the first Indian-owned shipping company, challenging British monopoly</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item mb-12">
+                        <div class="flex items-center justify-center">
+                            <div class="bg-white p-8 rounded-xl shadow-lg border border-amber-200 max-w-lg relative ml-auto">
+                                <div class="absolute -right-4 top-8 w-8 h-8 bg-amber-600 rounded-full border-4 border-gray-50"></div>
+                                <span class="text-amber-700 font-semibold text-sm uppercase tracking-wide">1908</span>
+                                <h3 class="font-serif text-xl font-semibold mt-2 mb-3 text-gray-900">Imprisonment & Trials</h3>
+                                <p class="text-gray-700">Faced multiple imprisonments for his nationalist activities</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="flex items-center justify-center">
+                            <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-xl shadow-lg border border-amber-300 max-w-lg relative">
+                                <div class="absolute -left-4 top-8 w-8 h-8 bg-amber-600 rounded-full border-4 border-gray-50"></div>
+                                <span class="text-amber-700 font-semibold text-sm uppercase tracking-wide">1936</span>
+                                <h3 class="font-serif text-xl font-semibold mt-2 mb-3 text-gray-900">Legacy Continues</h3>
+                                <p class="text-gray-700">His death marked the end of an era, but his ideals live on</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Section -->
+    <section id="book" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-amber-700">
+                    📘 Featuring the Book by Dr. J. S. R.
+                </h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+                    A Scholarly Tribute - Meticulously chronicling VOC's contributions to India's freedom struggle
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8">
+                        <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-xl shadow-lg border border-amber-200">
+                            <h3 class="font-serif text-2xl font-semibold mb-4 text-amber-700">About the Author</h3>
+                            <p class="text-gray-700 leading-relaxed mb-6">
+                                Dr. J. S. R. is a renowned historian and scholar who has dedicated years to researching
+                                and documenting the life and contributions of V.O. Chidambaram Pillai.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
+                                    <span class="text-gray-700">Extensive archival research</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
+                                    <span class="text-gray-700">New perspectives on VOC's ideology</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
+                                    <span class="text-gray-700">Critical historical analysis</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 p-8 rounded-xl shadow-lg border border-gray-200">
+                            <h3 class="font-serif text-2xl font-semibold mb-4 text-amber-700">Book Highlights</h3>
+                            <ul class="space-y-3 text-gray-700">
+                                <li>• Comprehensive biography with never-before-seen materials</li>
+                                <li>• Analysis of VOC's business strategies and economic vision</li>
+                                <li>• Detailed account of the Swadeshi movement</li>
+                                <li>• Legal battles and imprisonment chronicles</li>
+                                <li>• Contemporary relevance of his ideas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg border border-amber-200">
+                        <h3 class="font-serif text-2xl font-semibold mb-6 text-amber-700 text-center">
+                            Book Features on Website
+                        </h3>
+
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-amber-600 pl-6">
+                                <h4 class="font-semibold text-gray-900 mb-2">Synopsis & Highlights</h4>
+                                <p class="text-gray-700 text-sm">Detailed overview of the book's key contributions to VOC scholarship</p>
+                            </div>
+
+                            <div class="border-l-4 border-amber-600 pl-6">
+                                <h4 class="font-semibold text-gray-900 mb-2">Author's Message</h4>
+                                <p class="text-gray-700 text-sm">Personal insights and research methodology from Dr. J.S.R.</p>
+                            </div>
+
+                            <div class="border-l-4 border-amber-600 pl-6">
+                                <h4 class="font-semibold text-gray-900 mb-2">Key Excerpts</h4>
+                                <p class="text-gray-700 text-sm">Carefully selected passages offering new perspectives</p>
+                            </div>
+
+                            <div class="border-l-4 border-amber-600 pl-6">
+                                <h4 class="font-semibold text-gray-900 mb-2">Availability Information</h4>
+                                <p class="text-gray-700 text-sm">Purchase links and download options for global readers</p>
+                            </div>
+
+                            <div class="border-l-4 border-amber-600 pl-6">
+                                <h4 class="font-semibold text-gray-900 mb-2">Academic Reviews</h4>
+                                <p class="text-gray-700 text-sm">Endorsements from leading historians and scholars</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 text-center">
+                            <button class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                Access Book Resources
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <section id="legacy" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-amber-700">
+                    VOC's Voice Today
+                </h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+                    Drawing parallels between his revolutionary ideas and contemporary India's economic independence
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:border-amber-300 transition-all duration-300 group hover:shadow-xl">
+                    <div class="text-amber-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🚢</div>
+                    <h3 class="font-serif text-xl font-semibold mb-4 text-gray-900">Maritime Independence</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        VOC's vision of Indian-owned shipping resonates with today's "Make in India" and
+                        "Atmanirbhar Bharat" initiatives, emphasizing economic self-reliance.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:border-amber-300 transition-all duration-300 group hover:shadow-xl">
+                    <div class="text-amber-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">💼</div>
+                    <h3 class="font-serif text-xl font-semibold mb-4 text-gray-900">Entrepreneurial Spirit</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        His bold business ventures mirror the startup ecosystem and entrepreneurial
+                        revolution transforming modern India's economic landscape.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:border-amber-300 transition-all duration-300 group hover:shadow-xl">
+                    <div class="text-amber-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">⚖️</div>
+                    <h3 class="font-serif text-xl font-semibold mb-4 text-gray-900">Legal Legacy</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        His use of law as a tool for justice continues to inspire legal professionals
+                        fighting for social causes and constitutional rights.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-gradient-to-br from-amber-50 to-orange-50 p-12 rounded-xl shadow-lg border border-amber-200 max-w-4xl mx-auto text-center">
+                <h3 class="font-serif text-3xl font-bold mb-6 text-amber-700">Educational Impact</h3>
+                <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    This website serves as a comprehensive educational platform, making VOC's story accessible to
+                    students, researchers, and history enthusiasts worldwide, ensuring his legacy continues to inspire
+                    future generations.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 text-left">
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-3">For Students</h4>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li>• Interactive learning modules</li>
+                            <li>• Historical document analysis</li>
+                            <li>• Timeline exploration tools</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-3">For Researchers</h4>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li>• Archival photograph collections</li>
+                            <li>• Primary source materials</li>
+                            <li>• Academic paper references</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-amber-700">
+                    🚀 Website Launch Event
+                </h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+                    A Landmark Cultural Celebration Reflecting the Grandeur of VOC's Legacy
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-8">
+                        <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-xl shadow-lg border border-amber-200">
+                            <h3 class="font-serif text-2xl font-semibold mb-6 text-amber-700">Launch Event Highlights</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <span class="w-2 h-2 bg-amber-600 rounded-full mr-3 mt-2"></span>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Keynote Speeches</h4>
+                                        <p class="text-gray-700 text-sm">Eminent historians, public figures, and VOC descendants</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="w-2 h-2 bg-amber-600 rounded-full mr-3 mt-2"></span>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Website Demonstration</h4>
+                                        <p class="text-gray-700 text-sm">Live showcase of features and interactive elements</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="w-2 h-2 bg-amber-600 rounded-full mr-3 mt-2"></span>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Book Launch</h4>
+                                        <p class="text-gray-700 text-sm">Panel discussion with Dr. J.S.R. and scholars</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="w-2 h-2 bg-amber-600 rounded-full mr-3 mt-2"></span>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Cultural Performances</h4>
+                                        <p class="text-gray-700 text-sm">Poetry readings and short films about VOC's life</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 p-8 rounded-xl shadow-lg border border-gray-200">
+                            <h3 class="font-serif text-2xl font-semibold mb-4 text-amber-700">Future Events</h3>
+                            <p class="text-gray-700 mb-6">
+                                Post-launch, the website will host virtual events, online exhibitions,
+                                and an annual VOC Day celebration in the digital space.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
+                                    <span class="text-gray-700">Monthly virtual exhibitions</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
+                                    <span class="text-gray-700">Educational webinars</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
+                                    <span class="text-gray-700">Annual VOC Day commemoration</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg border border-amber-200">
+                        <h3 class="font-serif text-2xl font-semibold mb-6 text-amber-700 text-center">
+                            Get Involved
+                        </h3>
+
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Interest</label>
+                                <select class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300">
+                                    <option>Launch Event Updates</option>
+                                    <option>Educational Resources</option>
+                                    <option>Research Collaboration</option>
+                                    <option>Media & Press</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <textarea rows="4" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300" placeholder="Share your thoughts or questions..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-[1.02] shadow-lg">
+                                Join the Legacy
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg mb-4 font-serif text-amber-400">For media inquiries,<br class="hidden sm:block">please contact our team</h4>
+                    <p class="text-sm text-gray-400">info@voclegacy.com</p>
+                    <p class="text-sm text-gray-400">Tamil Nadu, India</p>
+                    <div class="mt-4">
+                        <h5 class="text-amber-400 font-semibold mb-2">Follow VOC Legacy</h5>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-amber-400 transition-colors">
+                                <i class="fab fa-facebook text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-amber-400 transition-colors">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-amber-400 transition-colors">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-amber-400 transition-colors">
+                                <i class="fab fa-youtube text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg mb-4 font-serif text-amber-400">Sign up for news and updates<br class="hidden sm:block">from VOC Legacy</h4>
+                    <p class="text-sm text-gray-400 mb-4">Stay informed about new content and events</p>
+                    <div class="flex flex-col sm:flex-row">
+                        <input type="email" placeholder="Enter your email" class="bg-gray-800 text-white p-2 flex-1 rounded sm:rounded-l sm:rounded-r-none mb-2 sm:mb-0 border border-gray-700 focus:border-amber-500 focus:outline-none">
+                        <button class="bg-amber-600 text-white px-4 py-2 rounded sm:rounded-r sm:rounded-l-none hover:bg-amber-700 transition-colors">Subscribe</button>
+                    </div>
+                    <div class="mt-4">
+                        <label class="flex items-center text-sm text-gray-400">
+                            <input type="checkbox" class="mr-2 text-amber-600 focus:ring-amber-500">
+                            Yes, subscribe me to the newsletter.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg mb-4 font-serif text-amber-400">Explore VOC Legacy</h4>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <a href="#biography" class="block hover:text-amber-400 cursor-pointer transition-colors">Biography</a>
+                        <a href="#timeline" class="block hover:text-amber-400 cursor-pointer transition-colors">Historical Timeline</a>
+                        <a href="#book" class="block hover:text-amber-400 cursor-pointer transition-colors">Featured Book</a>
+                        <a href="#legacy" class="block hover:text-amber-400 cursor-pointer transition-colors">Modern Relevance</a>
+                        <a href="#events" class="block hover:text-amber-400 cursor-pointer transition-colors">Events & Programs</a>
+                    </div>
+                    <div class="mt-6">
+                        <h5 class="text-amber-400 font-semibold mb-2">Educational Resources</h5>
+                        <div class="space-y-1 text-sm text-gray-400">
+                            <p class="hover:text-amber-400 cursor-pointer transition-colors">Research Materials</p>
+                            <p class="hover:text-amber-400 cursor-pointer transition-colors">Academic Papers</p>
+                            <p class="hover:text-amber-400 cursor-pointer transition-colors">Photo Archives</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>© 2024 VOC Legacy. A tribute to V.O. Chidambaram Pillai - Kappalottiya Tamizhan</p>
+                <p class="mt-2">Preserving the legacy of India's maritime pioneer and freedom fighter</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line');
+        const navbar = document.getElementById('navbar');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenuOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            // Animate hamburger to X
+            hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            hamburgerLines[1].style.opacity = '0';
+            hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenuOverlay.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            
+            // Reset hamburger animation
+            hamburgerLines[0].style.transform = 'none';
+            hamburgerLines[1].style.opacity = '1';
+            hamburgerLines[2].style.transform = 'none';
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close menu when clicking on menu links
+        const mobileMenuLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+                closeMobileMenu();
+            });
+        });
+
+        // Desktop navigation smooth scrolling
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+                closeMobileMenu();
+            }
+        });
+
+        // Timeline animation on scroll
+        const timelineItems = document.querySelectorAll('.timeline-item');
+
+        function animateTimeline() {
+            timelineItems.forEach((item, index) => {
+                const itemTop = item.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (itemTop < windowHeight * 0.8) {
+                    setTimeout(() => {
+                        item.classList.add('animate');
+                    }, index * 200);
+                }
+            });
+        }
+
+        // Initial timeline animation check
+        window.addEventListener('scroll', animateTimeline);
+        animateTimeline(); // Check on page load
+
+        // Form submission
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Add loading state
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+
+                // Simulate form submission
+                setTimeout(() => {
+                    submitBtn.textContent = 'Message Sent!';
+                    submitBtn.classList.remove('bg-amber-600', 'hover:bg-amber-700');
+                    submitBtn.classList.add('bg-green-500');
+
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('bg-green-500');
+                        submitBtn.classList.add('bg-amber-600', 'hover:bg-amber-700');
+                        form.reset();
+                    }, 2000);
+                }, 1000);
+            });
+        }
+
+        // Add smooth reveal animations for sections
+        const revealElements = document.querySelectorAll('.bg-white, .bg-gray-50, .timeline-item');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        console.log('🚢 V.O. Chidambaram Pillai Tribute Website Loaded Successfully!');
+        console.log('Honoring the legacy of Kappalottiya Tamizhan - The Tamil Helmsman');
+    </script>
+  </body>
+</html>
